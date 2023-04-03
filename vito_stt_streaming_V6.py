@@ -9,8 +9,6 @@ import vito_stt_client_pb2_grpc as pb_grpc
 from requests import Session
 import pyaudio
 
-import asyncio
-import multiprocessing as mp
 import subprocess
 
 import Privates
