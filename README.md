@@ -26,12 +26,17 @@
  아래 명령어들을 복사 붙여넣기
 
 ################################################
+
  #Vito API
+ 
  CLIENT_ID = "Input Your Client ID"
+ 
  CLIENT_SECRET = "Input Your Client Secret"
 
  #Openai API
+ 
  api_key = "Input Your Api Key"
+ 
 #################################################
 
 ## 실행 방법
