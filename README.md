@@ -24,8 +24,17 @@
  - Vito api키는 https://developers.vito.ai/ 에서 발급
  - Openai api키는 https://openai.com/product#made-for-developers 에서 발급
 
-    ### Privates.py를 열어 ""안에 해당하는 api 키 입력 후 저장
+  1. 메모장을 열어 아래 코드 입력
+  
+         #Vito API
+         CLIENT_ID = ""
+         CLIENT_SECRET = ""
 
+         #Openai API
+         api_key = ""
+  2. ""안에 발급받은 api키 입력
+  3. Privates.py 이름으로 저장
+    
 ## 실행 방법
  1. 설치 폴더에서 cmd 진입
  2. Installation의 작업 진행
