@@ -95,6 +95,10 @@ class main:
     isProcessing = False
 
     def __init__(self):
+        if Privates==None or Privates.CLIENT_ID == "" or Privates.CLIENT_SECRET == "" or Privates.api_key == "":
+            print("Privates.py 파일을 만들었나요? Readme를 확인해주세요")
+            exit()
+
         messages.append({"role" : "system", "content" : f"{systemRole}"})
         openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
         print("Start Now!")
