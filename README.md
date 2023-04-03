@@ -11,12 +11,12 @@
   
   env\Scripts\activate.bat
   
-  pip install -r requires.txt
+  pip install -r requirements.txt
   
  2. 일반 설치
   설치 폴던에서 cmd 진입
   
-  pip install -r requires.txt
+  pip install -r requirements.txt
 
 ## 필수 작업
  - Vito api키는 https://developers.vito.ai/ 에서 발급

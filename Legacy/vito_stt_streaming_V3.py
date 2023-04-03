@@ -8,10 +8,9 @@ import vito_stt_client_pb2 as pb
 import vito_stt_client_pb2_grpc as pb_grpc
 from requests import Session
 import pyaudio
-import subprocess
-import multiprocessing as mp
-import os
+
 import Privates
+import Openai_Api_V2
 
 API_BASE = "https://openapi.vito.ai"
 GRPC_SERVER_URL = "grpc-openapi.vito.ai:443"
@@ -21,7 +20,7 @@ CLIENT_SECRET = Privates.CLIENT_SECRET
 SAMPLE_RATE = 8000
 ENCODING = pb.DecoderConfig.AudioEncoding.LINEAR16
 
-cmd = 'python TTS_Papago.py'
+request = None
 
 class VITOOpenAPIClient:
     def __init__(self, client_id, client_secret):
@@ -76,14 +75,8 @@ class VITOOpenAPIClient:
                 resp: pb.DecoderResponse
                 for res in resp.results:
                     if res.is_final:
-                        print(res.alternatives[0].text)
-                        # Create a new process to execute the command
-                        p = mp.Process(target=self.execute_command, args=(cmd, res.alternatives[0].text))
-                        p.start()
-
-    @staticmethod
-    def execute_command(cmd, answer):
-        subprocess.run(cmd + " " + answer)
+                        request = res.alternatives[0].text
+                        print(request)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -101,3 +94,5 @@ if __name__ == "__main__":
 
     client = VITOOpenAPIClient(CLIENT_ID, CLIENT_SECRET)
     client.transcribe_streaming_grpc(None, config)
+
+    chatbot = Openai_Api_V2.Chatbot()

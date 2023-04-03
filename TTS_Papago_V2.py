@@ -15,7 +15,7 @@ class Translator:
         service = Service(chrome_driver)
         self.driver = webdriver.Chrome(service=service)
     
-    def translate(self, text):
+    def speak(self, text):
         # Exit program if no input provided
         if text == "":
             sys.exit(0)
@@ -30,7 +30,6 @@ class Translator:
         time.sleep(2)
 
         # Click translation button
-        #xpath = "/html/body/div/div/div[1]/section/div/div[1]/div[1]/div/div[4]/span[1]/span/span/button"
         button = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CLASS_NAME, 'btn_sound___2H-0Z')))
         button.click()
 
@@ -46,10 +45,9 @@ def main():
     
     # Get input from command line arguments
     answer = " ".join(sys.argv[1:])
-    print(answer)
 
     # Translate input and print result
-    result = translator.translate(answer)
+    result = translator.speak(answer)
 
     translator.close()
 

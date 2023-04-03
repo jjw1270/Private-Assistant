@@ -1,8 +1,8 @@
 import os
 import openai
-import Private
+import Privates
 
-openai.api_key = Private.api_key
+openai.api_key = Privates.api_key
 
 messages=[]
 while True:
