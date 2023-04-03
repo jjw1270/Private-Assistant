@@ -26,7 +26,7 @@
 
  설치 폴더에 Privates.py 파일을 만든다.
  
- 아래 명령어들을 복사 붙여넣기
+ 아래 명령어들을 복사 붙여넣기 (발급 받은 api키를 입력)
 
     #Vito API
     CLIENT_ID = "Input Your Client ID"
