@@ -14,6 +14,6 @@
 ## 실행 방법
  1. 설치 폴더에서 cmd 진입
  2. Installation의 작업 진행
- 3. 다음 명령어 입력 : python PrivateAssistant_v2.py
+ 3. 다음 명령어 입력 : python PrivateAssistant.py
  4. 최초 실행 시 발급받은 API키를 입력해야 합니다.
  5. Start Now! 가 출력되면 음성인식 가능합니다.
