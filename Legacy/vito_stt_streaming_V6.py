@@ -22,7 +22,7 @@ CLIENT_SECRET = Privates.CLIENT_SECRET
 SAMPLE_RATE = 8000
 ENCODING = pb.DecoderConfig.AudioEncoding.LINEAR16
 
-class VITOOpenAPIClient:
+class STT:
     def __init__(self, client_id, client_secret):
         self._logger = logging.getLogger(__name__)
         self.client_id = client_id
@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
     main()
 
-    client = VITOOpenAPIClient(CLIENT_ID, CLIENT_SECRET)
+    client = STT(CLIENT_ID, CLIENT_SECRET)
     
     isListening = False
     while True:
